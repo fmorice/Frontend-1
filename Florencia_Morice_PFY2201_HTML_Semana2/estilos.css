@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1b1b2f;
+    color: #ffffff;
+}
+
+header {
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    background-color: #162447;
+    border-bottom: 4px solid #e94560;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+nav {
+    padding: 15px;
+    background-color: #0f3460;
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #e94560;
+}
+
+section {
+    margin: 25px auto;
+    padding: 25px;
+    max-width: 900px;
+    background-color: #222244;
+    border: 2px solid #444466;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #e94560;
+    font-size: 26px;
+}
+
+#productos ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#productos li {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #2d2d50;
+    border: 2px solid #555577;
+    border-radius: 8px;
+}
+
+#productos li:nth-child(2) {
+    border-color: #e94560;
+}
+
+#productos h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+#productos img {
+    display: block;
+    margin: 15px auto;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+}
+
+#contacto {
+    text-align: center;
+    background-color: #162447;
+}
+
+#contacto a {
+    color: #e94560;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 25px;
+    border-top: 3px solid #e94560;
+}
