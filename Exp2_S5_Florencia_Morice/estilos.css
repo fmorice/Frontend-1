@@ -1,0 +1,436 @@
+/* =========================================
+   GAMEZONE - SEMANA 4 FRONTEND I
+   Bootstrap 5 + Diseño Responsive
+   ========================================= */
+
+
+/* =========================================
+   1. MODELO DE CAJAS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1b1b2f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   2. HEADER
+   ========================================= */
+
+header {
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    background-color: #162447;
+    border-bottom: 4px solid #e94560;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+/* =========================================
+   3. NAVBAR
+   ========================================= */
+
+.navbar {
+    background-color: #0f3460 !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff;
+    background-color: #e94560;
+}
+
+
+/* =========================================
+   4. CONTENIDO PRINCIPAL
+   ========================================= */
+
+main {
+    width: 100%;
+}
+
+section {
+    background-color: #222244;
+    border: 2px solid #444466;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+section h2 {
+    margin-top: 0;
+    color: #e94560;
+    font-size: 26px;
+}
+
+section p {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   5. TEXTO DE BIENVENIDA
+   ========================================= */
+
+/*
+   Título principal de bienvenida.
+   Fuente gamer/futurista.
+*/
+
+#inicio h2 {
+    font-family: "Orbitron", sans-serif !important;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e94560;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+/*
+   Texto descriptivo.
+*/
+
+#inicio p {
+    font-family: "Trebuchet MS", Arial, sans-serif !important;
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   6. CARRUSEL
+   ========================================= */
+
+#carouselGameZone {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #444466;
+    background-color: #111111;
+}
+
+
+/*
+   Todas las diapositivas tienen la misma altura.
+*/
+
+#carouselGameZone .carousel-item {
+    height: 400px;
+    background-color: #111111;
+    text-align: center;
+}
+
+
+/*
+   Imágenes del carrusel.
+   No se deforman ni se recortan.
+*/
+
+#carouselGameZone .carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   7. TEXTO DEL CARRUSEL
+   ========================================= */
+
+#carouselGameZone .carousel-caption {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 20px;
+
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+#carouselGameZone .carousel-caption h3 {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+}
+
+#carouselGameZone .carousel-caption p {
+    margin: 0;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   8. CONTROLES DEL CARRUSEL
+   ========================================= */
+
+#carouselGameZone .carousel-control-prev,
+#carouselGameZone .carousel-control-next {
+    width: 10%;
+    z-index: 5;
+}
+
+#carouselGameZone .carousel-indicators {
+    z-index: 6;
+}
+
+
+/* =========================================
+   9. CARDS DE PRODUCTOS
+   ========================================= */
+
+.card {
+    height: 100%;
+    background-color: #2d2d50;
+    border: 2px solid #555577;
+    border-radius: 8px;
+    color: #ffffff;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #e94560;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   10. IMÁGENES DE LAS CARDS
+   ========================================= */
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #555577;
+}
+
+
+/* =========================================
+   11. TEXTO DE LAS CARDS
+   ========================================= */
+
+.card-title {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.card-text {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   12. BOTONES
+   ========================================= */
+
+.btn-primary {
+    background-color: #e94560;
+    border-color: #e94560;
+}
+
+.btn-primary:hover {
+    background-color: #c73550;
+    border-color: #c73550;
+}
+
+
+/* =========================================
+   13. FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #162447;
+    border-top: 3px solid #e94560;
+    text-align: center;
+}
+
+#contacto p {
+    margin: 0 0 5px 0;
+}
+
+#contacto a {
+    color: #e94560;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contacto a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   14. TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+
+    /* Texto de bienvenida */
+
+    #inicio h2 {
+        font-size: 26px;
+    }
+
+    #inicio p {
+        font-size: 16px;
+    }
+
+
+    /* Carrusel */
+
+    #carouselGameZone .carousel-item {
+        height: 320px;
+    }
+
+    #carouselGameZone .carousel-item img {
+        height: 320px;
+    }
+
+
+    /* Cards */
+
+    .card-img-top {
+        height: 220px;
+    }
+}
+
+
+/* =========================================
+   15. MÓVIL
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+
+    /* Texto de bienvenida */
+
+    #inicio h2 {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    #inicio p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* Carrusel */
+
+    #carouselGameZone .carousel-item {
+        height: 230px;
+    }
+
+    #carouselGameZone .carousel-item img {
+        height: 230px;
+    }
+
+    #carouselGameZone .carousel-caption {
+        left: 15%;
+        right: 15%;
+        bottom: 10px;
+        padding: 6px 10px;
+    }
+
+    #carouselGameZone .carousel-caption h3 {
+        font-size: 18px;
+    }
+
+    #carouselGameZone .carousel-caption p {
+        font-size: 13px;
+    }
+
+
+    /* Cards */
+
+    .card-img-top {
+        height: 200px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        margin-top: 20px;
+        padding: 20px 15px;
+    }
+}
