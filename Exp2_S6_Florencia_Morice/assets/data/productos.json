@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Super Mario Bros.",
+    "precio": 29.99,
+    "plataforma": "Nintendo",
+    "genero": "Aventura",
+    "imagen": "assets/img/mario.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Minecraft",
+    "precio": 19.99,
+    "plataforma": "Multi-platform",
+    "genero": "Sandbox",
+    "imagen": "assets/img/minecraft.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Rocket League",
+    "precio": 24.99,
+    "plataforma": "PC/Consola",
+    "genero": "Deportivo",
+    "imagen": "assets/img/Rocket_League.jpg"
+  }
+]
