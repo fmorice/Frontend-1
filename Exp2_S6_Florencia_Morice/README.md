@@ -1,165 +1,116 @@
-# GameZone - Semana 6
+# GameZone React
 
-Proyecto correspondiente a la Semana 6 de Frontend I.
-Esta versión mantiene la temática de videojuegos de GameZone y amplía la funcionalidad desarrollada en las semanas anteriores mediante JavaScript, manipulación del DOM, eventos y Fetch API.
+Proyecto de Frontend I desarrollado en React como versión moderna de la tienda GameZone. La idea es mantener el estilo visual de la entrega anterior, reutilizando las imágenes del proyecto y adaptando la lógica del carrito a componentes reutilizables.
 
-## Estructura del proyecto
+## Objetivo
+
+Crear una aplicación sencilla de eCommerce para videojuegos, con un listado de productos y carrito de compras. El proyecto está pensado para ser fácil de entender para un estudiante principiante y para dejar la base lista para publicación en GitHub Pages.
+
+## Tecnologías utilizadas
+
+- React
+- JavaScript
+- JSX
+- Vite
+- Bootstrap 5.3.3
+- CSS personalizado
+
+## Funcionalidades principales
+
+- Listado de productos con nombre, precio normal, precio de oferta, descripción e imagen.
+- Botón "Agregar al carrito" por cada producto.
+- Carrito con estado React.
+- Aumento y disminución de cantidades.
+- Eliminación de productos del carrito.
+- Cálculo del total usando el precio de oferta.
+- Indicador del número total de productos en la barra de navegación.
+- Diseño responsive con enfoque gamer y colores oscuros.
+
+## Uso de React
+
+La aplicación se organiza en componentes simples:
+
+- App
+- Navbar
+- ListaProductos
+- Producto
+- Carrito
+
+Los datos de los productos están separados en un archivo dedicado:
+
+- src/data/productos.js
+
+Esto facilita mantener el contenido independiente de la lógica visual.
+
+## Funcionamiento del carrito
+
+El carrito se maneja con useState. Cuando el usuario agrega un producto:
+
+- Si ya existe en el carrito, aumenta la cantidad.
+- Si no existe, lo agrega con cantidad 1.
+- El total se calcula siempre con el precio de oferta.
+- Si el carrito queda vacío, se muestra un mensaje de advertencia.
+
+## Estructura general del proyecto
 
 ```text
 Exp2_S6_Florencia_Morice/
 ├── index.html
+├── package.json
+├── vite.config.js
 ├── README.md
-└── assets/
-    ├── css/
-    │   └── estilos.css
-    ├── js/
-    │   └── script.js
-    ├── data/
-    │   └── productos.json
-    └── img/
-        ├── mario.jpg
-        ├── minecraft.jpg
-        └── Rocket_League.jpg
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── estilos.css
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── ListaProductos.jsx
+│   │   ├── Producto.jsx
+│   │   └── Carrito.jsx
+│   └── data/
+│       └── productos.js
+├── assets/
+│   └── img/
+│       ├── mario.jpg
+│       ├── minecraft.jpg
+│       └── Rocket_League.jpg
+└── node_modules/
 ```
-
-## Tecnologías utilizadas
-
-* HTML5
-* CSS3
-* JavaScript
-* Bootstrap 5
-* Fetch API
-* Manipulación dinámica del DOM
-* Google Fonts - Orbitron
-
-## Funcionalidades implementadas
-
-### Carga dinámica de productos
-
-Los productos se almacenan en el archivo `assets/data/productos.json` y se cargan dinámicamente mediante la API `fetch()` de JavaScript.
-
-Mientras se realiza la carga se muestra temporalmente el mensaje:
-
-**"Cargando productos..."**
-
-Si ocurre un problema durante la carga, se muestra un mensaje amigable al usuario:
-
-**"No fue posible cargar los productos. Intenta recargar la página."**
-
-### Búsqueda de productos
-
-La página cuenta con un formulario de búsqueda que utiliza el evento `submit` de JavaScript para filtrar los productos por nombre.
-
-### Carrito de compras
-
-Los productos pueden agregarse al carrito mediante el evento `click`.
-
-El carrito permite:
-
-* Agregar productos.
-* Aumentar y disminuir cantidades.
-* Eliminar productos.
-* Mostrar la cantidad de productos.
-* Calcular dinámicamente el total de la compra.
-
-### Manipulación del DOM
-
-Los productos y los elementos del carrito se generan dinámicamente mediante JavaScript utilizando `createElement()` y otras funciones de manipulación del DOM.
-
-La función principal para mostrar los productos es `renderizarProductos()`.
-
-### Validación del formulario
-
-El formulario de contacto valida mediante JavaScript que los campos requeridos estén completos y que el correo electrónico tenga un formato válido.
-
-La validación del correo se realiza mediante una expresión regular.
-
-### Diseño responsive
-
-La interfaz utiliza Bootstrap 5 para facilitar la adaptación de la página a distintos tamaños de pantalla, incluyendo dispositivos móviles.
-
-La página incluye:
-
-* Navbar responsive.
-* Menú de categorías.
-* Buscador.
-* Carrusel.
-* Tarjetas de productos.
-* Carrito mediante Offcanvas.
-* Formulario de contacto.
-* Footer.
 
 ## Cómo probar el proyecto localmente
 
-Para probar correctamente la funcionalidad de `fetch()`, se recomienda ejecutar el proyecto mediante un servidor local.
-
-Desde la carpeta del proyecto:
+1. Abrir la terminal en la carpeta del proyecto.
+2. Instalar dependencias:
 
 ```bash
-python3 -m http.server 8000
+npm install
 ```
 
-Luego abrir en el navegador:
+3. Ejecutar la aplicación en modo desarrollo:
 
-```text
-http://localhost:8000/
+```bash
+npm run dev
 ```
 
-### Pruebas principales
+4. Abrir la URL que indique Vite en el navegador.
 
-1. Verificar que aparezca el mensaje **"Cargando productos..."** mientras se cargan los datos.
-2. Comprobar que los productos se muestran correctamente.
-3. Utilizar el buscador para filtrar productos.
-4. Agregar un producto al carrito.
-5. Aumentar o disminuir la cantidad.
-6. Comprobar el cálculo dinámico del total.
-7. Probar la validación del formulario de contacto.
-8. Verificar que las imágenes de los productos se carguen correctamente.
-9. Comprobar la adaptación de la página en una vista móvil.
+## Preparación para GitHub Pages
 
-## Compatibilidad entre navegadores
+El proyecto está configurado con Vite usando base relativa para facilitar la publicación posterior en GitHub Pages:
 
-Se realizaron pruebas de funcionamiento en distintos navegadores para verificar la compatibilidad de las funcionalidades JavaScript.
+```js
+base: './'
+```
 
-Las evidencias consideran pruebas realizadas en:
+Cuando corresponda, se puede compilar con:
 
-* Google Chrome.
-* Safari.
+```bash
+npm run build
+```
 
-Las pruebas permiten verificar el funcionamiento de la carga de productos, búsqueda y carrito en ambos navegadores.
+El contenido generado en la carpeta `dist` se puede publicar en una rama `gh-pages` para desplegarlo.
 
-## Evidencias de funcionamiento
+## Nota
 
-Las evidencias de la entrega consideran:
-
-* Estructura de archivos del proyecto.
-* Visualización de los productos cargados mediante Fetch API.
-* Archivo `productos.json` con los datos utilizados por la aplicación.
-* Funcionamiento del buscador.
-* Funcionamiento dinámico del carrito.
-* Validación del correo electrónico.
-* Manejo de errores de Fetch API.
-* Visualización del mensaje **"Cargando productos..."**.
-* Compatibilidad en Chrome y Safari.
-* Visualización responsive en dispositivos móviles.
-
-## Mejoras realizadas respecto a la entrega anterior
-
-* Se actualizó la estructura del proyecto para mantener una organización independiente para la Semana 6.
-* Se implementó la carga dinámica de productos mediante Fetch API.
-* Se agregó el mensaje temporal **"Cargando productos..."** durante la carga.
-* Se incorporó un mensaje amigable para errores de carga.
-* Se mejoró la manipulación del DOM utilizando `createElement()` para generar los elementos de los productos.
-* Se implementó un carrito dinámico con cantidades y cálculo del total.
-* Se agregó búsqueda de productos mediante el evento `submit`.
-* Se incorporó validación explícita del formato del correo electrónico mediante JavaScript.
-* Se mantuvo el diseño responsive mediante Bootstrap 5.
-* Se realizaron pruebas de compatibilidad en Chrome y Safari.
-
-## Consideraciones
-
-* Los productos utilizados en la página son datos de demostración almacenados en `assets/data/productos.json`.
-* Las imágenes de los productos se encuentran dentro de `assets/img/`.
-* El proyecto funciona de manera local y no requiere un backend.
-* No se implementan pagos reales, autenticación ni conexión con una base de datos.
-* La funcionalidad de compra es simulada con fines académicos.
+No se agregan funcionalidades extras como login, pagos, backend ni base de datos. La intención es mantener el proyecto simple y fiel a los requisitos de la semana 7.
