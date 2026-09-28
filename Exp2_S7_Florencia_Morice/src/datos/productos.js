@@ -5,7 +5,7 @@ export const productos = [
     precioNormal: 29990,
     precioOferta: 24990,
     descripcion: 'Juego clásico de aventuras y plataformas.',
-    imagen: '/img/mario.jpg'
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/mario.jpg'
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const productos = [
     precioNormal: 24990,
     precioOferta: 19990,
     descripcion: 'Juego de construcción y exploración.',
-    imagen: '/img/minecraft.jpg'
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/minecraft.jpg'
   },
   {
     id: 3,
@@ -21,6 +21,6 @@ export const productos = [
     precioNormal: 29990,
     precioOferta: 15990,
     descripcion: 'Juego de fútbol con vehículos.',
-    imagen: '/img/Rocket_League.jpg'
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/Rocket_League.jpg'
   }
 ];

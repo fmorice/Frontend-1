@@ -9,15 +9,20 @@ function App() {
 
   const agregarAlCarrito = (idProducto) => {
     setCarrito((carritoActual) => {
-      const productoExistente = carritoActual.find((item) => item.producto.id === idProducto);
+      const productoExistente = carritoActual.find(
+        (item) => item.producto.id === idProducto
+      );
 
       if (productoExistente) {
         return carritoActual.map((item) =>
-          item.producto.id === idProducto ? { ...item, cantidad: item.cantidad + 1 } : item
+          item.producto.id === idProducto
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item
         );
       }
 
       const producto = productos.find((item) => item.id === idProducto);
+
       return [...carritoActual, { producto, cantidad: 1 }];
     });
   };
@@ -26,17 +31,24 @@ function App() {
     setCarrito((carritoActual) =>
       carritoActual
         .map((item) =>
-          item.producto.id === idProducto ? { ...item, cantidad: item.cantidad - 1 } : item
+          item.producto.id === idProducto
+            ? { ...item, cantidad: item.cantidad - 1 }
+            : item
         )
         .filter((item) => item.cantidad > 0)
     );
   };
 
   const eliminarProducto = (idProducto) => {
-    setCarrito((carritoActual) => carritoActual.filter((item) => item.producto.id !== idProducto));
+    setCarrito((carritoActual) =>
+      carritoActual.filter((item) => item.producto.id !== idProducto)
+    );
   };
 
-  const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+  const totalProductos = carrito.reduce(
+    (total, item) => total + item.cantidad,
+    0
+  );
 
   return (
     <>
@@ -45,18 +57,101 @@ function App() {
       <main className="container py-4">
         <header className="text-center my-4">
           <h1 className="gamezone-title">GameZone</h1>
-          <p className="lead text-muted">Tienda de videojuegos</p>
+          <p className="lead subtitulo-gamezone">
+            Tienda de videojuegos
+          </p>
         </header>
 
+        {/* Carrusel de imágenes */}
         <section className="mb-5 banner-gamezone">
-          <div className="banner-slide active">
-            <img src="/img/mario.jpg" alt="Super Mario" />
+          <div
+            id="gameZoneCarousel"
+            className="carousel slide"
+            data-bs-ride="carousel"
+            data-bs-interval="3000"
+          >
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#gameZoneCarousel"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+
+              <button
+                type="button"
+                data-bs-target="#gameZoneCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+
+              <button
+                type="button"
+                data-bs-target="#gameZoneCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+
+            <div className="carousel-inner">
+              <div className="carousel-item active banner-slide">
+                <img
+                  src="/Frontend-1/Exp2_S7_Florencia_Morice/img/mario.jpg"
+                  alt="Super Mario Bros."
+                />
+              </div>
+
+              <div className="carousel-item banner-slide">
+                <img
+                  src="/Frontend-1/Exp2_S7_Florencia_Morice/img/minecraft.jpg"
+                  alt="Minecraft"
+                />
+              </div>
+
+              <div className="carousel-item banner-slide">
+                <img
+                  src="/Frontend-1/Exp2_S7_Florencia_Morice/img/Rocket_League.jpg"
+                  alt="Rocket League"
+                />
+              </div>
+            </div>
+
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#gameZoneCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Anterior</span>
+            </button>
+
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#gameZoneCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Siguiente</span>
+            </button>
           </div>
         </section>
 
         <div className="row g-4">
           <div className="col-12 col-lg-8">
-            <ListaProductos productos={productos} onAgregarAlCarrito={agregarAlCarrito} />
+            <ListaProductos
+              productos={productos}
+              onAgregarAlCarrito={agregarAlCarrito}
+            />
           </div>
 
           <div className="col-12 col-lg-4">
