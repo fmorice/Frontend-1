@@ -1,0 +1,26 @@
+export const productos = [
+  {
+    id: 1,
+    nombre: 'Super Mario Bros.',
+    precioNormal: 29990,
+    precioOferta: 24990,
+    descripcion: 'Juego clásico de aventuras y plataformas.',
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/mario.jpg'
+  },
+  {
+    id: 2,
+    nombre: 'Minecraft',
+    precioNormal: 24990,
+    precioOferta: 19990,
+    descripcion: 'Juego de construcción y exploración.',
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/minecraft.jpg'
+  },
+  {
+    id: 3,
+    nombre: 'Rocket League',
+    precioNormal: 29990,
+    precioOferta: 15990,
+    descripcion: 'Juego de fútbol con vehículos.',
+    imagen: '/Frontend-1/Exp2_S7_Florencia_Morice/img/Rocket_League.jpg'
+  }
+];
