@@ -84,14 +84,15 @@ main {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #000;
+  background: #0a0f1f;
 }
 
 .banner-slide img {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  height: 260px;
+  object-fit: contain;
   object-position: center;
+  background: #0a0f1f;
   filter: brightness(0.85);
 }
 
@@ -221,7 +222,7 @@ main {
   }
 
   .banner-slide img {
-    height: 220px;
+    height: 180px;
   }
 
   .card-game img {

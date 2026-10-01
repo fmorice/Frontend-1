@@ -1,4 +1,4 @@
-function Producto({ producto, onAgregarAlCarrito }) {
+function Producto({ producto, onAgregarAlCarrito, enCarrito }) {
   return (
     <article className="card card-game h-100">
       <img className="card-img-top" src={producto.imagen} alt={producto.nombre} />
@@ -14,7 +14,7 @@ function Producto({ producto, onAgregarAlCarrito }) {
         <p className="descripcion">{producto.descripcion}</p>
 
         <button className="btn btn-primary mt-auto" onClick={() => onAgregarAlCarrito(producto.id)}>
-          Agregar al carrito
+          {enCarrito ? 'En el carrito ✓' : 'Agregar al carrito'}
         </button>
       </div>
     </article>

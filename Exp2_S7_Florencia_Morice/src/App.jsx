@@ -1,11 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './componentes/Navbar';
 import ListaProductos from './componentes/ListaProductos';
 import Carrito from './componentes/Carrito';
-import { productos } from './datos/productos';
 
 function App() {
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState('');
   const [carrito, setCarrito] = useState([]);
+
+  useEffect(() => {
+    // Carga los productos desde el archivo JSON público al iniciar la aplicación.
+    const cargarProductos = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.BASE_URL}productos.json`);
+
+        if (!response.ok) {
+          throw new Error('No fue posible cargar los productos.');
+        }
+
+        const data = await response.json();
+        setProductos(data);
+      } catch {
+        setError('No fue posible cargar los productos.');
+      } finally {
+        setCargando(false);
+      }
+    };
+
+    cargarProductos();
+  }, []);
 
   const agregarAlCarrito = (idProducto) => {
     setCarrito((carritoActual) => {
@@ -146,23 +170,30 @@ function App() {
           </div>
         </section>
 
-        <div className="row g-4">
-          <div className="col-12 col-lg-8">
-            <ListaProductos
-              productos={productos}
-              onAgregarAlCarrito={agregarAlCarrito}
-            />
-          </div>
+        {cargando ? (
+          <p className="text-center">Cargando productos...</p>
+        ) : error ? (
+          <p className="text-center" role="alert">{error}</p>
+        ) : (
+          <div className="row g-4">
+            <div className="col-12 col-lg-8">
+              <ListaProductos
+                productos={productos}
+                carrito={carrito}
+                onAgregarAlCarrito={agregarAlCarrito}
+              />
+            </div>
 
-          <div className="col-12 col-lg-4">
-            <Carrito
-              carrito={carrito}
-              onAgregar={agregarAlCarrito}
-              onRestar={restarUnidad}
-              onEliminar={eliminarProducto}
-            />
+            <div className="col-12 col-lg-4">
+              <Carrito
+                carrito={carrito}
+                onAgregar={agregarAlCarrito}
+                onRestar={restarUnidad}
+                onEliminar={eliminarProducto}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </main>
     </>
   );
