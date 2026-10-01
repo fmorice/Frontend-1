@@ -1,33 +1,39 @@
-GameZone — Semana 8
+# GameZone — Semana 8
 
 Proyecto React para una tienda de videojuegos, desarrollado como continuación del proyecto de eCommerce de las semanas anteriores.
 
-Objetivo
+## Objetivo
 
 Construir una aplicación sencilla de eCommerce para GameZone utilizando React, incorporando gestión de estados, carga dinámica de productos, búsqueda, carrito de compras y renderizado condicional.
 
-Tecnologías
-React
-Vite
-JavaScript
-JSX
-Bootstrap 5.3.3
-CSS personalizado
-Funcionalidades
-Catálogo de productos cargado dinámicamente desde productos.json.
-Uso de useEffect para cargar los productos mediante fetch.
-Uso de useState para gestionar productos, carrito y búsqueda.
-Búsqueda y filtrado de productos.
-Agregar productos al carrito.
-Modificar cantidades de productos.
-Eliminar productos del carrito.
-Cálculo automático del total.
-Cambio de estado del botón a “En el carrito ✓”.
-Renderizado condicional según el estado de la aplicación.
-Mensaje “No se encontraron productos.” cuando una búsqueda no tiene resultados.
-Diseño responsive.
-Carrusel de imágenes de videojuegos.
-Estructura
+## Tecnologías
+
+* React
+* Vite
+* JavaScript
+* JSX
+* Bootstrap 5.3.3
+* CSS personalizado
+
+## Funcionalidades
+
+* Catálogo de productos cargado dinámicamente desde `productos.json`.
+* Uso de `useEffect` para cargar los productos mediante `fetch`.
+* Uso de `useState` para gestionar productos, carrito y búsqueda.
+* Búsqueda y filtrado de productos.
+* Agregar productos al carrito.
+* Modificar cantidades de productos.
+* Eliminar productos del carrito.
+* Cálculo automático del total.
+* Cambio de estado del botón a **“En el carrito ✓”**.
+* Renderizado condicional según el estado de la aplicación.
+* Mensaje **“No se encontraron productos.”** cuando una búsqueda no tiene resultados.
+* Diseño responsive.
+* Carrusel de imágenes de videojuegos.
+
+## Estructura del proyecto
+
+```text
 Exp3_S8_Florencia_Morice/
 ├── index.html
 ├── package.json
@@ -45,34 +51,50 @@ Exp3_S8_Florencia_Morice/
         ├── ListaProductos.jsx
         ├── Producto.jsx
         └── Carrito.jsx
-Ejecución local
+```
 
-Instalar las dependencias:
+## Ejecución local
 
+### 1. Instalar las dependencias
+
+```bash
 npm install
+```
 
-Ejecutar el proyecto:
+### 2. Ejecutar el proyecto
 
+```bash
 npm run dev
-Compilación
+```
+
+Luego abrir en el navegador la dirección indicada por Vite.
+
+## Compilación
 
 Para generar la versión de producción:
 
+```bash
 npm run build
-GitHub Pages
+```
 
-El proyecto se encuentra publicado en GitHub Pages mediante la rama gh-pages.
+## GitHub Pages
+
+El proyecto se encuentra publicado en GitHub Pages mediante la rama `gh-pages`.
 
 La configuración de Vite utiliza la siguiente ruta base:
 
+```javascript
 base: '/Frontend-1/Exp3_S8_Florencia_Morice/'
+```
 
-Esto permite que la aplicación funcione correctamente en la ruta de GitHub Pages.
+Esto permite que la aplicación funcione correctamente en la ruta correspondiente de GitHub Pages.
 
-Despliegue
+## Despliegue
 
-Repositorio:
+**Repositorio:**
 https://github.com/fmorice/Frontend-1
 
-Aplicación publicada:
+**Aplicación publicada:**
 https://fmorice.github.io/Frontend-1/Exp3_S8_Florencia_Morice/
+
+
